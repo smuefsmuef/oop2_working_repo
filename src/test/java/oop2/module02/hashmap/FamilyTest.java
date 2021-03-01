@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import oop2.module02.Person;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Dieter Holz
@@ -49,8 +50,8 @@ class FamilyTest {
 
 		//then
 //		assertEquals(2, ages.size());
-//		ages.contains(30);
-//		ages.contains(35);
+//		assertTrue(ages.contains(30));
+//		assertTrue(ages.contains(35));
 	}
 
 }
