@@ -1,4 +1,4 @@
-package ch.fhnw.oop2.module03.bottleanddrink;
+package oop2.module03.bottleanddrink;
 
 /**
  * @author Dieter Holz

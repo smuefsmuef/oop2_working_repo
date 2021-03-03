@@ -1,9 +1,9 @@
-package ch.fhnw.oop2.module03.cage;
+package oop2.module03.cage;
 
 import org.junit.jupiter.api.Test;
 
-import ch.fhnw.oop2.module03.cage.animal.Bird;
-import ch.fhnw.oop2.module03.cage.animal.Lion;
+import oop2.module03.cage.animal.Bird;
+import oop2.module03.cage.animal.Lion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;

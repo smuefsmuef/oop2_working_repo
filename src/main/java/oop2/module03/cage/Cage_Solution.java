@@ -1,9 +1,9 @@
-package ch.fhnw.oop2.module03.cage;
+package oop2.module03.cage;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import ch.fhnw.oop2.module03.cage.animal.Animal;
+import oop2.module03.cage.animal.Animal;
 
 /**
  * @author Dieter Holz

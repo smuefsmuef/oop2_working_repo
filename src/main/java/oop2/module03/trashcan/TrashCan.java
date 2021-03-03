@@ -1,4 +1,4 @@
-package ch.fhnw.oop2.module03.trashcan;
+package oop2.module03.trashcan;
 
 /**
  * @author Dieter Holz
