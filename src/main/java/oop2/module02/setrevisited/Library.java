@@ -6,6 +6,7 @@ import java.util.Set;
 /**
  * @author Dieter Holz
  */
+
 public class Library {
     private final Set<Book> allBooks = new HashSet<>();
 
@@ -30,3 +31,4 @@ public class Library {
         return null;
     }
 }
+

@@ -8,9 +8,11 @@ import oop2.module02.Person;
 /**
  * @author Dieter Holz
  */
+
 public class Family {
 
     private final Set<Person> members = new HashSet<>();
+    private final Set<Integer> ages = new HashSet<>();
 
 
     public int size() {
@@ -35,5 +37,26 @@ public class Family {
         return members.contains(person);
     }
 
+    public int numberOfMembers(int age) { // alterantiv mit neuem Set arbeiten, siehe next allAges()
+        int counter = 0;
+        for (Person p : members) {
+            if (p.getAge() == age) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public Set<Integer> allAges(){ // a Set that contains all ages of the family
+        for(Person p : members) {
+            ages.add(p.getAge());
+        }
+        return ages;
+    }
+    /* teacher-solution
+    public Set<Integer> allAges() {
+        return ageToCountMap.keySet();
+    }
+    */
 
 }
