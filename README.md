@@ -1,18 +1,5 @@
-# OOP2 Courseware
+# OOP2 Courseware - FS 2021
 
-This Courseware-Project is for examples and sample solutions from the lecture.
-You can also implement the exercise examples in this project.
-
-In a first step you shoul get the intial "Hello World" example running in your IDE.
-
-## With IDE support
-
-In IntelliJ you can clone the project using: `File -> New -> Project from Version Control … -> Git`
-
-You can also clone your GitHub repository (using cmd, or similar) and import the project using IntelliJ.
-
-If everything went fine in your project view the folder `src/main` should be blue and the folder `src/main` should be green.
-Try running the sample code in `HelloWorld`.
 
 ## In case of problems with the IntelliJ setup
 
@@ -22,8 +9,6 @@ Do the following steps:
 - In the window, navigate to your project
 - Select the File "build.gradle"
 - In the next window select "Open as Project".
-
-You can also use the `build.grade` file for a project setup in Eclipse or NetBeans.
 
 ## Create a private duplicate (Fork)
 1. Fork this repo (top right next to star and watch)
@@ -37,8 +22,3 @@ You can also use the `build.grade` file for a project setup in Eclipse or NetBea
    `git merge upstream/main`
    
 more help with forks [here](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/working-with-forks)
-
-## Pleas note:
-
-The graded homework and project work are **NOT** part of this repository.
-For these there will be separate repositories/projects.
