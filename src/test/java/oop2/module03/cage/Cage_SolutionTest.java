@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class Cage_SolutionTest {
 
     @Test
-    void testInit(){
+    void testInit() {
 
         //when
         Cage_Solution<Lion> c = new Cage_Solution<>();
-        Lion                l = new Lion();
+        Lion l = new Lion();
 
         //then
         assertEquals(0, c.numberOfAnimals());
@@ -27,11 +27,11 @@ class Cage_SolutionTest {
     }
 
     @Test
-    void testJail(){
+    void testJail() {
         //given
-        Cage_Solution<Lion> c  = new Cage_Solution<>();
-        Lion                l1 = new Lion();
-        Lion                l2 = new Lion();
+        Cage_Solution<Lion> c = new Cage_Solution<>();
+        Lion l1 = new Lion();
+        Lion l2 = new Lion();
 
         //when
         c.jail(l1);
@@ -47,11 +47,11 @@ class Cage_SolutionTest {
     }
 
     @Test
-    void testSetFree(){
+    void testSetFree() {
         //given
-        Cage_Solution<Lion> c  = new Cage_Solution<>();
-        Lion                l1 = new Lion();
-        Lion                l2 = new Lion();
+        Cage_Solution<Lion> c = new Cage_Solution<>();
+        Lion l1 = new Lion();
+        Lion l2 = new Lion();
         c.jail(l1);
         c.jail(l2);
 
@@ -66,12 +66,12 @@ class Cage_SolutionTest {
     }
 
     @Test
-    void testJailAll(){
+    void testJailAll() {
         //given
-        Cage_Solution<Bird> c     = new Cage_Solution<>();
-        Bird                b1    = new Bird();
-        Bird                b2    = new Bird();
-        Bird[]              birds = {b1, b2};
+        Cage_Solution<Bird> c = new Cage_Solution<>();
+        Bird b1 = new Bird();
+        Bird b2 = new Bird();
+        Bird[] birds = {b1, b2};
 
         //when
         Cage_Solution.jailAll(c, birds);

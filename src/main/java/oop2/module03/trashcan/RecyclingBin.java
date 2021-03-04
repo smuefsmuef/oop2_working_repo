@@ -17,18 +17,30 @@ public class RecyclingBin<T> {
         return null;
     }
 
+
+
     public static void main(String[] args) {
         RecyclingBin<Banana> recyclingBin = new RecyclingBin<>();
+        RecyclingBin<Papier> altpapierSammlung = new RecyclingBin<>();
 
         Banana banana = new Banana();
+        Papier papier = new Papier();
 
         recyclingBin.trash(banana);
+        altpapierSammlung.trash(papier);
 
         banana = recyclingBin.getLast();
+        papier = altpapierSammlung.getLast();
+
+        altpapierSammlung.purge();
 
     }
 
     static class Banana {
+
+    }
+
+    static class Papier {
 
     }
 }

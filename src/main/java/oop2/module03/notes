@@ -1,0 +1,9 @@
+### Goals of Generics
+
+#Type Safety
+-Weniger Tests schreiben, weil Typ schon fix definiert
+-prevents runtime-errors
+-prevents multiple, similar (sub-) classes through parametrisation of class
+
+
+

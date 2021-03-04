@@ -32,6 +32,5 @@ public class Cage_Solution<T> {
         for(A animal : allAnimals){
             cage.jail(animal);
         }
-
     }
 }
