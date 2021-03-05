@@ -74,8 +74,7 @@ class CageTest {
         Bird[] birds = {b1, b2};
 
         //when
-       // todo: why? its not compiling?
-        // Cage.fangenAll(c, birds);
+        Cage.fangenAll(c, birds);
 
         //then
         assertEquals(2, c.numberOfAnimals());

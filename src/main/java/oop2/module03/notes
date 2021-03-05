@@ -5,5 +5,25 @@
 -prevents runtime-errors
 -prevents multiple, similar (sub-) classes through parametrisation of class
 
+//nested
+ArrayList<ArrayList<Produkts>> store = new ArrayList<>();
+bso. Laden besteht aus ener Liste von Listen von Produkten.
+innere Klammer <ArrayList<Produkts> is wiedie kategorie
 
+--> Bounded Generics!
+Klassen
+public  class Bottle<T extends Drinks> {}
+// so stellen wir sicher, dass nur objekte = Drink oder Subklassen davon erzeugt werden können
+Interfaces
+public class Bottle<D extends Comparable> --> extends not implements
+
+Wildcarts
+rückgabe/definition egal was es eigentlich für ein objkettyp es ist
+-nur in methoden --> genericss als parameter einer methode übergeben
+-nur lesemodus,keineobjekte hinzufgen
+
+Methden
+Typparameter nur auf einer methode
+z.Bmethode, die elemente aus array in eine arrayliste abspeichert
+(arrays nicht generisch,
 

@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Cage<T> {
+public class Cage<T extends Animal> {
     Set<T> gefangeneTiere = new HashSet<>(); // need to add a set (with list i get duplicates!)
 
     public void fangen(T tier) {
@@ -32,10 +32,10 @@ public class Cage<T> {
         return gefangeneTiere.size();
     }
 
-    // todo: why? in solution it's
-    // public static <A extends Animal> void jailAll(Cage_Solution<A> cage, A[] allAnimals) {
+    // todo: statisch nicht statisch?
+    // --> Bounded generics! generische methode .
 
-    public void fangenAll(Cage<T> kaefig, T[] alleEinerSpezies) {
+    public static <T extends Animal> void fangenAll(Cage<T> kaefig, T[] alleEinerSpezies) {
         for (T a : alleEinerSpezies) {
             kaefig.fangen(a);
         }
