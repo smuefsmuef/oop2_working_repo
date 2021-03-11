@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 class BoxTest {
 
     @Test
-    public void testGenerics(){
+    public void testGenerics() {
 
         Box<A> aBox = new Box<>();
         Box<B> bBox = new Box<>();
@@ -44,8 +44,8 @@ class BoxTest {
         //  d1 = bBox.getValue();
 
         // U9
-        aBox= aBox;
-        dBox= dBox;
+        aBox = aBox;
+        dBox = dBox;
         // aBox = bBox; // rewuired Box<D<,provided required Box<C
         // dBox= cBox; // rewuired Box<D<,provided required Box<C
 
