@@ -6,22 +6,22 @@ import java.util.*;
 import static java.util.stream.Collectors.*;
 
 public class Winner {
-    private int      year;
-    private String   nationality;
-    private String   name;
-    private String   team;
-    private int      lengthKm;
+    private int year;
+    private String nationality;
+    private String name;
+    private String team;
+    private int lengthKm;
     private Duration winningTime;
-    private int      stageWins;
-    private int      daysInYellow;
+    private int stageWins;
+    private int daysInYellow;
 
     public Winner(int year, String nationality, String name, String team, int lengthKm, Duration winningTime, int daysInYellow) {
-        this.year         = year;
-        this.nationality  = nationality;
-        this.name         = name;
-        this.team         = team;
-        this.lengthKm     = lengthKm;
-        this.winningTime  = winningTime;
+        this.year = year;
+        this.nationality = nationality;
+        this.name = name;
+        this.team = team;
+        this.lengthKm = lengthKm;
+        this.winningTime = winningTime;
         this.daysInYellow = daysInYellow;
     }
 
@@ -39,12 +39,13 @@ public class Winner {
             new Winner(2016, "Great Britain", "Chris Froome", "Team Sky", 3529, Duration.parse("PT89H04M48S"), 14));
 
     public static void main(String args[]) {
-        // Filter and Map -
-        List<String> winnersOfToursLessThan3500km = tdfWinners
+
+        // // // // Filter and Map -
+        Set<String> winnersOfToursLessThan3500km = tdfWinners
                 .stream()
                 .filter(d -> d.getLengthKm() < 3500) // Separate out Tours less than 3500km
-                .map(Winner::getName) // Get names of winners
-                .collect(toList()); // Return a list
+                .map(Winner::getName) // Get names of winners or get nationality
+                .collect(toSet()); // Return a list
 
 
         // Winners of Tours Less than 3500km - [Alberto Contador, Cadel Evans, Bradley Wiggins, Chris Froome, Chris Froome]
@@ -60,13 +61,13 @@ public class Winner {
         System.out.println("Winners of Tours Greater than 3500km - " + winnersOfToursGreaterThan3500km);
 
 
-        // limit -
+        //  // // // limit -
         List<Winner> winnerObjectsOfToursLessThan3500kmLimit2 = tdfWinners
                 .stream()
                 .filter(d -> d.getLengthKm() < 3500)
-                .limit(2)
+                .limit(2) // reduces list to two entries
                 .collect(toList());
-        // winnerObjectsOfToursLessThan3500kmLimit2 [Alberto Contador, Cadel Evans]
+        // winnerObjectsOfToursLessThan3500kmLimit2 [Alberto Contador, Cadel Evans]// todo: warum werden hier nur die namen angezeigt?
         System.out.println("winnerObjectsOfToursLessThan3500kmLimit2 " + winnerObjectsOfToursLessThan3500kmLimit2);
 
 
@@ -81,9 +82,8 @@ public class Winner {
         System.out.println("firstTwoWinnersOfToursLessThan3500km - " + firstTwoWinnersOfToursLessThan3500km);
 
 
-        // filter by distinct
-        List<String> distinctTDFWinners = tdfWinners
-                .stream()
+        //  // // // filter by distinct (single appearance in liste, once)
+        List<String> distinctTDFWinners = tdfWinners.stream()
                 .map(Winner::getName)
                 .distinct()
                 .collect(toList());
@@ -97,7 +97,7 @@ public class Winner {
         System.out.println("numberOfDistinceWinners - " + numberOfDistinceWinners);
 
 
-        // skip records
+        //  // // // skip records
         List<Winner> skipEveryOtherTDFWinner = tdfWinners
                 .stream()
                 .skip(2)
@@ -125,7 +125,7 @@ public class Winner {
         System.out.println("mapWinnerNameLengthToList " + mapWinnerNameLengthToList);
 
 
-        // matching - allMatch, noneMatch
+        //  // // // matching - allMatch, noneMatch
         Optional<Winner> winner2012 = tdfWinners.stream().filter(w -> w.getName().contains("Wiggins")).findAny();
         // winner2012 - Bradley Wiggins
         System.out.println("winner2012 - " + winner2012.get());
@@ -136,8 +136,8 @@ public class Winner {
         System.out.println("winnerYear2014 - " + winnerYear2014.get());
 
 
-        // reducing - 0 --> initial value
-        int totalDistance = tdfWinners.stream().map(Winner::getLengthKm).reduce(0, Integer::sum);
+        //  // // // reducing - 0 --> initial value
+        int totalDistance = tdfWinners.stream().map(Winner::getLengthKm).reduce(0, Integer::sum); // sum -->  (a, b) -> a + b);
         // totalDistance - 38767
         System.out.println("totalDistance - " + totalDistance);
 
@@ -156,25 +156,25 @@ public class Winner {
         System.out.println("fastestTDF - " + fastestWinner.get());
 
 
-        // shorthand
+        //  // // // shorthand
         OptionalDouble fastestTDF = tdfWinners.stream().mapToDouble(Winner::getAveSpeed).min();
         // fastestTDF - 39.0
         System.out.println("fastestTDF - " + fastestTDF.getAsDouble());
 
 
-        // groupingby - make a map whose keys are names
+        //  // // // groupingby - make a map whose keys are names
         Map<String, List<Winner>> namesVsWinner = tdfWinners.stream().collect(groupingBy(Winner::getName));
         // namesVsWinner - {Bradley Wiggins=[Bradley Wiggins], Carlos Sastre=[Carlos Sastre], Cadel Evans=[Cadel Evans], Óscar Pereiro=[Óscar Pereiro], Chris Froome=[Chris Froome, Chris Froome, Chris Froome], Andy Schleck=[Andy Schleck], Alberto Contador=[Alberto Contador, Alberto Contador], Vincenzo Nibali=[Vincenzo Nibali]}
         System.out.println("namesVsWinner - " + namesVsWinner);
 
 
-        // join strings
+        //  // // // join strings
         String allTDFWinnersTeamsCSV = tdfWinners.stream().map(Winner::getTeam).collect(joining(", "));
         // allTDFWinnersTeams Caisse d'Epargne–Illes Balears, Discovery Channel, Team CSC, Astana, Team Saxo Bank, BMC Racing Team, Team Sky, Team Sky, Astana, Team Sky, Team Sky
         System.out.println("allTDFWinnersTeams " + allTDFWinnersTeamsCSV);
 
 
-        // grouping
+        //  // // // grouping
         Map<String, List<Winner>> winnersByNationality = tdfWinners.stream().collect(groupingBy(Winner::getNationality));
         // winnersByNationality - {Great Britain=[Bradley Wiggins, Chris Froome, Chris Froome, Chris Froome], Luxembourg=[Andy Schleck], Italy=[Vincenzo Nibali], Australia=[Cadel Evans], Spain=[Óscar Pereiro, Alberto Contador, Carlos Sastre, Alberto Contador]}
         System.out.println("winnersByNationality - " + winnersByNationality);
