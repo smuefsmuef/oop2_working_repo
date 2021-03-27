@@ -67,7 +67,7 @@ public class Winner {
                 .filter(d -> d.getLengthKm() < 3500)
                 .limit(2) // reduces list to two entries
                 .collect(toList());
-        // winnerObjectsOfToursLessThan3500kmLimit2 [Alberto Contador, Cadel Evans]// todo: warum werden hier nur die namen angezeigt?
+        // winnerObjectsOfToursLessThan3500kmLimit2 [Alberto Contador, Cadel Evans]
         System.out.println("winnerObjectsOfToursLessThan3500kmLimit2 " + winnerObjectsOfToursLessThan3500kmLimit2);
 
 
