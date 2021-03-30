@@ -22,3 +22,11 @@
     -fx-scale-y: 1.0;
     -fx-background-color: darkred;
 }
+
+.test-button:armed {
+-fx-background-color:green;
+}
+
+#testId {
+-fx-background-color: pink;
+}

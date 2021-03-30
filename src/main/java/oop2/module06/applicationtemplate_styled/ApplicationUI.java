@@ -7,13 +7,13 @@ public class ApplicationUI extends StackPane {
     private Button button;
 
     public ApplicationUI() {
-        initializeSelf();
+        initializeSelf(); // für css
         initializeControls();
         layoutControls();
     }
 
     private void initializeSelf() {
-        String stylesheet = getClass().getResource("style.css").toExternalForm();
+        String stylesheet = getClass().getResource("style.css").toExternalForm(); // get css stylesheet
         getStylesheets().add(stylesheet);
     }
 
@@ -23,5 +23,7 @@ public class ApplicationUI extends StackPane {
 
     private void layoutControls() {
         getChildren().add(button);
+        button.getStyleClass().add("test-button"); // adding new class to button class
+//        button.setId("testId");
     }
 }
