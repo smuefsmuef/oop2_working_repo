@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import static java.lang.Math.random;
 import static java.time.format.DateTimeFormatter.ISO_DATE;
 
-public class CalculatorUI extends GridPane {
+public class CalculatorUIKohler extends GridPane {
 
     private ArrayList<Button> numberButtons = new ArrayList<>();
 
@@ -34,20 +34,17 @@ public class CalculatorUI extends GridPane {
 
     private Button equal;
     private Button ac;
-    private Button today;
 
     private Label display;
 
-//    private Rectangle colors = createRectangle();
-
-
-    public CalculatorUI() {
+    public CalculatorUIKohler() {
         initializeSelf();
         initializeControls();
         layoutControls();
-        setupEventHandlers(); // neww
+        setupEventHandlers();
+        setupValueChangedListeners();
+        setupBindings();
     }
-
 
     private void initializeSelf() {
         String stylesheet = getClass().getResource("style.css").toExternalForm();
@@ -70,16 +67,11 @@ public class CalculatorUI extends GridPane {
         plusminus = createButton("±");
         equal = createButton("=");
         ac = createButton("C");
-//        today = createButton(getToday());
 
         display = new Label("0");
         display.setMaxWidth(Double.MAX_VALUE);
     }
 
-//    private String getToday() {
-//
-//        return (java.time.LocalTime.now()).toString() ;
-//    }
 
     private Rectangle createRectangle() {
         Rectangle rectangle =  new Rectangle(200, 300);
@@ -138,6 +130,24 @@ public class CalculatorUI extends GridPane {
     }
 
     private void setupEventHandlers() {
+        plus.setOnAction(event -> {
+            System.out.println(" plus");
+
+        });
+
+        equal.setOnAction(event -> {
+            System.out.println(" gleich = resultat");
+        });
+
+        numberButtons.get(3).setOnAction(event -> {
+            System.out.println(" 3");
+        });
+    }
+
+    private void setupValueChangedListeners() {
+    }
+
+    private void setupBindings() {
     }
 
 }
