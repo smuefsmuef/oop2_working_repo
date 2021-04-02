@@ -45,6 +45,7 @@ public class CalculatorUI extends GridPane {
         initializeSelf();
         initializeControls();
         layoutControls();
+        setupEventHandlers(); // neww
     }
 
 
@@ -73,8 +74,6 @@ public class CalculatorUI extends GridPane {
 
         display = new Label("0");
         display.setMaxWidth(Double.MAX_VALUE);
-
-
     }
 
 //    private String getToday() {
@@ -101,7 +100,6 @@ public class CalculatorUI extends GridPane {
         setHgap(5);
         setVgap(5);
         setPadding(new Insets(150, 5, 150,5));
-
 
         ColumnConstraints cc = new ColumnConstraints();
         cc.setHgrow(Priority.ALWAYS);
@@ -137,10 +135,9 @@ public class CalculatorUI extends GridPane {
 
         add(equal, 0, 7, 5, 1);
 
+    }
 
-//        add(today, 0,6, 4,1);
-
-
+    private void setupEventHandlers() {
     }
 
 }

@@ -9,7 +9,7 @@ public class BidirectionalBindingApp extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		Parent rootPanel = new BidirectionalBindingExample();
+		Parent rootPanel = new BidirectionalBindingExamplePetra();
 
 		Scene scene = new Scene(rootPanel);
 

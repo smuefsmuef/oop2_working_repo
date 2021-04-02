@@ -15,7 +15,7 @@ public class UnidirectionalBindingExample extends VBox {
         layoutControls();
         setupEventHandlers();
         setupValueChangedListeners();
-        setupBindings();
+        setupBindings(); // neue methode, fasst alle bindings
     }
 
     private void initializeSelf(){
@@ -42,7 +42,7 @@ public class UnidirectionalBindingExample extends VBox {
     }
 
     private void setupBindings() {
-
+    label.textProperty().bind(slider.valueProperty().asString()); // move slider, updates binded element text
     }
 
 }

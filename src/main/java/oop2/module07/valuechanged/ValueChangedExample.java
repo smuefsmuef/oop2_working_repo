@@ -34,26 +34,21 @@ public class ValueChangedExample extends VBox {
 	}
 
     private void setupEventHandlers() {
+
     }
-
+	// hier 2 valuechangelistener & oder bindings --> wenn eins wechselt, dann das andere auch!
 	private void setupValueChangedListeners() {
-		// Tu es oder tu es nicht. Es gibt kein Versuchen.
+		textField.textProperty().addListener((observable, oldValue, newValue ) -> {
+			System.out.println("new value, move slider!");
+			double value = Double.parseDouble(newValue);
+			slider.setValue(value);
+
+		});
+		slider.valueProperty().addListener((observable, oldValue, newValue ) -> {
+			System.out.println("new slider, set new value!");
+			textField.setText((newValue).toString());
+		});
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
