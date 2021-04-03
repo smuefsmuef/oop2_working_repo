@@ -4,11 +4,11 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class CalculatorApp extends Application {
+public class CalculatorAppKohler extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        CalculatorUI kalkui = new CalculatorUI();
+        CalculatorUIKohler kalkui = new CalculatorUIKohler();
 
         Scene scene = new Scene(kalkui);
         primaryStage.setTitle("Kalkulator");
