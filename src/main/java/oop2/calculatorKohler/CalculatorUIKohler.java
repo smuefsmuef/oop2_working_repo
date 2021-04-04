@@ -1,27 +1,20 @@
-package oop2.module06.calculatorchallenge.kohler;
+package oop2.calculatorKohler;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.effect.BlendMode;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
-import javafx.util.Duration;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-
-import static java.lang.Math.random;
-import static java.time.format.DateTimeFormatter.ISO_DATE;
 
 public class CalculatorUIKohler extends GridPane {
 
     private ArrayList<Button> numberButtons = new ArrayList<>();
+    private Calculations test = new Calculations();
 
     private Button dot;
 
@@ -132,7 +125,6 @@ public class CalculatorUIKohler extends GridPane {
     private void setupEventHandlers() {
         plus.setOnAction(event -> {
             System.out.println(" plus");
-
         });
 
         equal.setOnAction(event -> {
@@ -145,9 +137,18 @@ public class CalculatorUIKohler extends GridPane {
     }
 
     private void setupValueChangedListeners() {
+
+
     }
 
     private void setupBindings() {
+        // bind buttons to keys
+        // bind keys to button
+
+        // bind display to result
+       // display.textProperty().bind(test.resultProperty()); // daraus eine eigene property machen
+
+
     }
 
 }
