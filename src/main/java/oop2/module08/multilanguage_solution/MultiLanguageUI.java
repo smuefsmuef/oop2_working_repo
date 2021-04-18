@@ -14,7 +14,7 @@ public class MultiLanguageUI extends GridPane {
 
     private Button germanButton;
     private Button englishButton;
-    private Label  label;
+    private Label label;
 
     public MultiLanguageUI(MultiLanguagePM model) {
         this.model = model;
@@ -32,9 +32,9 @@ public class MultiLanguageUI extends GridPane {
     }
 
     private void initializeControls() {
-        germanButton  = new Button();
+        germanButton = new Button();
         englishButton = new Button();
-        label         = new Label();
+        label = new Label();
     }
 
     private void layoutControls() {
@@ -58,7 +58,7 @@ public class MultiLanguageUI extends GridPane {
     }
 
     private void setupEventHandlers() {
-        germanButton.setOnAction(event  -> model.setLanguage(MultiLanguagePM.Lang.DE));
+        germanButton.setOnAction(event -> model.setLanguage(MultiLanguagePM.Lang.DE));
         englishButton.setOnAction(event -> model.setLanguage(MultiLanguagePM.Lang.EN));
     }
 

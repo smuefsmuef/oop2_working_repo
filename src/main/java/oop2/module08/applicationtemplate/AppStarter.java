@@ -5,13 +5,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AppStarter extends Application {
+public class AppStarter extends Application { // bleibt immer ziemlich gleich, kreieirt Instanz der Applikation
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		PresentationModel pm = new PresentationModel();
+		PresentationModel pm = new PresentationModel(); // instanzieren
 
-		Parent rootPanel = new ApplicationUI(pm);
+		Parent rootPanel = new ApplicationUI(pm); // provide pm in konstruktor app ui
 
 		Scene scene = new Scene(rootPanel);
 

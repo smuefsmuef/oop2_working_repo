@@ -8,22 +8,22 @@ import javafx.stage.Stage;
 
 public class ModelBasedCalculatorApp extends Application {
 
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		CalculatorPM calculator = new CalculatorPM();
-		Parent       rootPanel  = new CalculatorUI(calculator);
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        CalculatorPM calculator = new CalculatorPM();
+        Parent rootPanel = new CalculatorUI(calculator);
 
-		Scene scene = new Scene(rootPanel);
+        Scene scene = new Scene(rootPanel);
 
-		primaryStage.setTitle("Calculator");
-		primaryStage.setScene(scene);
+        primaryStage.setTitle("Calculator");
+        primaryStage.setScene(scene);
 
-		primaryStage.centerOnScreen();
+        primaryStage.centerOnScreen();
 
-		primaryStage.show();
-	}
+        primaryStage.show();
+    }
 
-	public static void main(String[] args) {
-		launch(args);
-	}
+    public static void main(String[] args) {
+        launch(args);
+    }
 }

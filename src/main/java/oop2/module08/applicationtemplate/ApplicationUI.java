@@ -8,8 +8,8 @@ public class ApplicationUI extends StackPane {
 
     private Button button;
 
-    public ApplicationUI(PresentationModel model) {
-        this.model = model;
+    public ApplicationUI(PresentationModel model) { // provide pm in konstruktor
+        this.model = model; // --> use PM as parameter and ...
         initializeSelf();
         initializeControls();
         layoutControls();
@@ -38,6 +38,6 @@ public class ApplicationUI extends StackPane {
     }
 
     private void setupBindings() {
-        button.textProperty().bind(model.greetingProperty());
+        button.textProperty().bind(model.greetingProperty()); // --> ...setup bindingts *only* to properties in the pm
     }
 }

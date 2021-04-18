@@ -3,3 +3,9 @@
     -fx-pref-height: 300;
     -fx-pref-width:  400;
 }
+
+.button {
+    -fx-background-color: purple;
+    -fx-text-fill: white;
+
+}
