@@ -1,31 +1,31 @@
 package oop2.module09.nationalratswahlen_solution.views;
 
-import java.util.Locale;
-
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-
 import oop2.module09.nationalratswahlen_solution.presentationmodels.GemeindeResultatPM;
 import oop2.module09.nationalratswahlen_solution.presentationmodels.GesamtResultatPM;
 
+import java.util.Locale;
+
 public class ApplicationUI extends VBox {
-	private final GesamtResultatPM model;
+    private final GesamtResultatPM model;
 
-	private TableView<GemeindeResultatPM> tabelle;
-	private Label                         anzahlGemeinden;
+    private TableView<GemeindeResultatPM> tabelle;
+    private Label anzahlGemeinden;
 
-	public ApplicationUI(GesamtResultatPM model) {
-		this.model = model;
+    public ApplicationUI(GesamtResultatPM model) {
+        this.model = model;
         initializeSelf();
         initializeControls();
-		layoutControls();
-		setupEventHandlers();
-		setupValueChangedListeners();
-		setupBindings();
-	}
+        layoutControls();
+        setupEventHandlers();
+        setupValueChangedListeners();
+        setupBindings();
+    }
 
     private void initializeSelf() {
         String stylesheet = getClass().getResource("style.css").toExternalForm();
@@ -33,12 +33,12 @@ public class ApplicationUI extends VBox {
     }
 
     public void initializeControls() {
-		tabelle = initializeResultatTabelle();
-		anzahlGemeinden = new Label();
-	}
+        tabelle = initializeResultatTabelle();
+        anzahlGemeinden = new Label();
+    }
 
-	private TableView<GemeindeResultatPM> initializeResultatTabelle() {
-		TableView<GemeindeResultatPM> tableView = new TableView<>(model.getAlleResultate());
+    private TableView<GemeindeResultatPM> initializeResultatTabelle() {
+        TableView<GemeindeResultatPM> tableView = new TableView<>(model.getAlleResultate());    //What data should be used in the table
 
         TableColumn<GemeindeResultatPM, String> idCol = new TableColumn<>("Gemeindenr.");
         idCol.setCellValueFactory(cell -> cell.getValue().gemeindeNrProperty());
@@ -76,28 +76,29 @@ public class ApplicationUI extends VBox {
         // Variante bei numerischen Werten: Formatieren via asString
         TableColumn<GemeindeResultatPM, String> wahlbeteiligungCol = new TableColumn<>("Wahlbeteiligung");
         wahlbeteiligungCol.setCellValueFactory(cell -> cell.getValue().wahlbeteiligungProperty()
-                                                           .asString(new Locale("de", "CH"), "%.2f %%"));
+                .asString(new Locale("de", "CH"), "%.2f %%"));
 
 
-        tableView.getColumns().addAll(idCol, nameCol, cantonCol, fdpCol, CVPCol, SPSCol, SVPCol, LPSCol, wahlberechtigteCol, waehlendeCol, wahlbeteiligungCol);
+        tableView.getColumns()
+                .addAll(idCol, nameCol, cantonCol, fdpCol, CVPCol, SPSCol, SVPCol, LPSCol, wahlberechtigteCol, waehlendeCol, wahlbeteiligungCol);
 
-		return tableView;
-	}
+        return tableView;
+    }
 
-	private void layoutControls() {
-		setVgrow(tabelle, Priority.ALWAYS);
+    private void layoutControls() {
+        setVgrow(tabelle, Priority.ALWAYS);
 
-		getChildren().addAll(tabelle, anzahlGemeinden);
-	}
+        getChildren().addAll(tabelle, anzahlGemeinden);
+    }
 
-	private void setupEventHandlers() {
-	}
+    private void setupEventHandlers() {
+    }
 
-	private void setupValueChangedListeners() {
-	}
+    private void setupValueChangedListeners() {
+    }
 
     private void setupBindings() {
-	}
+    }
 
 
 }
