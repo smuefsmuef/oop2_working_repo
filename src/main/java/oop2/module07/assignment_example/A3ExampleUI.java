@@ -59,6 +59,7 @@ public class A3ExampleUI extends GridPane {
         //jetzt ist der Button sicher rechtsbuendig
         setHalignment(buttonCancel, HPos.RIGHT);
 
+
         add(labelName, 0, 0);
         add(labelEmail, 0, 1);
         add(textFieldName, 1, 0);

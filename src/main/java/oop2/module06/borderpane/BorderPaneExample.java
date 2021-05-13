@@ -35,8 +35,7 @@ public class BorderPaneExample extends BorderPane {
         setMargin(rightButton , new Insets(0, 5, 0, 5));
 
         setTop(topButton);
-        setLeft(leftButton);
-        setRight(rightButton);
+
         setBottom(bottomButton);
         setCenter(textArea);
     }

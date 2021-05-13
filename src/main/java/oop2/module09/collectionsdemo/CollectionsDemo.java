@@ -3,10 +3,12 @@ package oop2.module09.collectionsdemo;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ListView;
 
 public class CollectionsDemo {
-    ObservableList<String> myList = FXCollections.observableArrayList();
+    ObservableList<String> myList = FXCollections.observableArrayList();  // 1. Create observableList erstellen, datentyp muss dann gleich sein wie der der list view
 
+   // ListView<String> myListView = new ListView<>(myList); // 2. Create ListView, übergabe der observableList
 
     public CollectionsDemo(){
         myList.addListener((ListChangeListener<? super String>) c->{
