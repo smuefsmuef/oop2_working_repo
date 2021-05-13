@@ -1,7 +1,6 @@
 package oop2.module09.nationalratswahlen_solution.views;
 
-import java.util.Locale;
-
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -10,6 +9,8 @@ import javafx.scene.layout.VBox;
 
 import oop2.module09.nationalratswahlen_solution.presentationmodels.GemeindeResultatPM;
 import oop2.module09.nationalratswahlen_solution.presentationmodels.GesamtResultatPM;
+
+import java.util.Locale;
 
 public class ApplicationUI extends VBox {
     private final GesamtResultatPM model;
@@ -38,7 +39,7 @@ public class ApplicationUI extends VBox {
     }
 
     private TableView<GemeindeResultatPM> initializeResultatTabelle() {
-        TableView<GemeindeResultatPM> tableView = new TableView<>(model.getAlleResultate());
+        TableView<GemeindeResultatPM> tableView = new TableView<>(model.getAlleResultate());    //What data should be used in the table
 
         TableColumn<GemeindeResultatPM, String> idCol = new TableColumn<>("Gemeindenr.");
         idCol.setCellValueFactory(cell -> cell.getValue().gemeindeNrProperty());
@@ -79,7 +80,8 @@ public class ApplicationUI extends VBox {
                 .asString(new Locale("de", "CH"), "%.2f %%"));
 
 
-        tableView.getColumns().addAll(idCol, nameCol, cantonCol, fdpCol, CVPCol, SPSCol, SVPCol, LPSCol, wahlberechtigteCol, waehlendeCol, wahlbeteiligungCol);
+        tableView.getColumns()
+                .addAll(idCol, nameCol, cantonCol, fdpCol, CVPCol, SPSCol, SVPCol, LPSCol, wahlberechtigteCol, waehlendeCol, wahlbeteiligungCol);
 
         return tableView;
     }

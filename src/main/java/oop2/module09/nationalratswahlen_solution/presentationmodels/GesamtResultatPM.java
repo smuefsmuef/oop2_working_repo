@@ -36,7 +36,7 @@ public class GesamtResultatPM {
 
 
     private List<GemeindeResultatPM> readFromFile() {
-        try (BufferedReader reader = getReader(FILE_NAME)) {
+		try (BufferedReader reader = getReader(FILE_NAME)) {
             return reader.lines()
                     .skip(1)                                              // erste Zeile ist die Headerzeile; ueberspringen
                     .map(line -> new GemeindeResultatPM(line.split(DELIMITER, 22))) // aus jeder Zeile ein Objekt machen
@@ -72,7 +72,7 @@ public class GesamtResultatPM {
     }
 
     private BufferedWriter getWriter(String fileName) {
-        try {
+	    try {
             String file = getClass().getResource(fileName).getFile();
             return new BufferedWriter(new FileWriter(file, StandardCharsets.UTF_8));
         } catch (IOException e) {
